@@ -1,0 +1,13 @@
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        max_val = -999999
+        m = []
+        for i in candies:
+            if max_val < i:
+                max_val = i
+        for j in candies:
+            if extraCandies + j >= max_val:
+                m.append(True)
+            else:
+                m.append(False)
+        return m
